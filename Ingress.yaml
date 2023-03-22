@@ -1,0 +1,20 @@
+apiVersion: v1 
+kind: Ingress
+metadata:
+  name: Ingress
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: ingress-class
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: prefix
+        backend:
+         service: 
+           name: name of your service
+           port: 
+             number: 80
+  

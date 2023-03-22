@@ -1,0 +1,20 @@
+kubernetes commands:-
+
+1) kubectl apply -f file-name 
+2) kubectl get deploy
+3) kubectl get rs 
+4) kubectl get pods -o wide 
+5) kubectl apply -f service-file
+6) kubectl get svc
+7) kubectl apply -f pv
+8) kubectl get pv 
+9) kubectl apply -f pvc 
+10) kubectl get pvc 
+11) kubectl apply -f storageClass
+12) kubectl get sc 
+13) kubectl apply -f statefulset
+14) kubectl get sts 
+15) kubectl describe pods/pod-name 
+16) kubectl taint node node-name key=value:NoSchedule
+17) kubectl taint node node-name key=value-
+18) 

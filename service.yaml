@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-mysql
+  namespace: default
+spec:
+  ports:
+    - ports: 80
+  selector:
+    app: mysql 
+  clusterIP: None
+  

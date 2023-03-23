@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: affinity-antiaffinity
+  namespace: default
+spec:
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:   #tells that dont assign the pod to that node which has 
+          - key: app          # key=value=app=store dont assign to that node
+            operator: In
+            values:
+            - store
+        topologyKey: "kubernetes.io/hostname"
+  containers:
+  - name: redis-server
+    image: redis:3.2-alpine
+  

@@ -18,3 +18,17 @@ spec:
       - /tmp/healthy
     initialDelaySeconds: 5
     periodSeconds: 5
+    # another example of livenessprobe with httpget method
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 80
+      initialDelaySeconds: 5
+      periodSeconds: 5   
+    readinessProbe:
+      httpGet:
+        path: /
+        port: 80
+      initialDelaySeconds: 5
+      periodSeconds: 10
+      

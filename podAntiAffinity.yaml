@@ -14,3 +14,10 @@ spec:
             values:
             - ap-south-1
         topologyKey: "topology.kubernetes.io/zone"
+  containers:
+  - name: cont-1
+    image: nginx
+    ports:
+      - name: www
+        port: 80
+    

@@ -20,3 +20,4 @@ kubernetes commands:-
 18) kubectl exec-it name-of-pod -- bash
 19) kubectl delete pod/pod-name 
 20) kubectl cluster-info 
+21) kubectl get api-version | grep Deployment

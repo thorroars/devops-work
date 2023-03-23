@@ -16,5 +16,7 @@ kubernetes commands:-
 14) kubectl get sts 
 15) kubectl describe pods/pod-name 
 16) kubectl taint node node-name key=value:NoSchedule
-17) kubectl taint node node-name key=value-
-18) 
+17) kubectl taint node node-name key=value:NoSchedule-
+18) kubectl exec-it name-of-pod -- bash
+19) kubectl delete pod/pod-name 
+20) kubectl cluster-info 

@@ -14,15 +14,6 @@ spec:
       labels: 
         app: mysql
     spec:
-      affinity:
-        podAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: name
-                operator: In
-                values: node-1
-              topologyKey: kubernetes.io/host
       containers:
       - name: mysql
         image: mysql:latest
@@ -37,12 +28,12 @@ spec:
             secretKeyRef:
               - name: secret-mysql
                 key: MYSQL_ROOT_PASSWORD
-volumeClaimTemplates:
-- metadata:
-    name: mysql-vol
-  spec:
-    accessModes: ["ReadWriteOnce"]
-    storageClassName: my-storage-class
-    resources:
-      requests:
-        storage: "1Gi"
+  volumeClaimTemplates:
+  - metadata:
+      name: mysql-vol
+    spec:
+      accessModes: ["ReadWriteOnce"]
+      storageClassName: "my-storage-class"
+      resources:
+        requests:
+          storage: "1Gi"

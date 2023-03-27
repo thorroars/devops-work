@@ -1,0 +1,10 @@
+apiVersion: v1 
+kind: Pod 
+metadata:
+  name: java-app
+  namespace: default
+spec:
+  containers:
+  - name: java-app
+    image: vinayjadhav/hello-app:v1
+    

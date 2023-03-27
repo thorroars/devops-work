@@ -1,6 +1,5 @@
-FROM openjdk:8
-MAINTAINER vinay
+FROM openjdk:8-alpine
 WORKDIR /app
-COPY . /app
-RUN javac Main.java
-ENTRYPOINT ["java", "Main.java"]
+COPY sample.java /app
+RUN javac sample.java
+ENTRYPOINT ["java", "sample.java"]

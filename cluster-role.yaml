@@ -5,7 +5,7 @@ metadata:
   # namespace ommitted since cluster roles are not namespaced 
 rules:
 - apiGroups: ""
-  resources: ["Deployment"]
+  resources: ["deployments"]
   verbs: ["get","list","watch"]
   
   

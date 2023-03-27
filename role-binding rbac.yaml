@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata: 
+  name: role-binding
+subjects: #you can specify number of subjects
+- kind: user
+  name: vinay 
+  apiGroup: rbac.authorization.k8s.io
+roleRef: #role ref specifies reference from role/clusterrole
+  kind: Role
+  name: role
+  apiGroup: rbac.authorization.k8s.io

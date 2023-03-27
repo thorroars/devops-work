@@ -1,0 +1,15 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+ name: role-binding-with-cluster-role
+ namespace: development
+  #it will grant all permission in development namespace
+subjects:
+- kind: user
+  name: jadhav
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: CLusterRole 
+  name: cluster-role
+  apiGroup: rbac.authorization.k8s.io
+  

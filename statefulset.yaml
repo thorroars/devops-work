@@ -14,15 +14,6 @@ spec:
       labels: 
         app: mysql
     spec:
-      affinity:
-        podAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: name
-                operator: In
-                values: node-1
-              topologyKey: kubernetes.io/host
       containers:
       - name: mysql
         image: mysql:latest

@@ -1,0 +1,70 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-js-v1.0.0
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: front-end
+  template:
+    metadata:
+      labels:
+        app: front-end
+    spec:
+      containers:
+      - name: nodejs-frontend-app
+        image: vinayjadhav/node-js:latest
+        ports:
+          - containerPort: 3000
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        volumeMounts:
+          - name: db-front
+            mountPath: /app
+      volumes: 
+        - name: db-front
+          persistentVolumeClaim:
+            claimTemplate: node-js-pvc
+---
+apiVersion: v1 
+kind: PersistentVolume 
+metadata:
+  name: pv-nodejs
+  namespace: default
+spec:
+  capacity:
+    storage: "2Gi"
+  accessModes: [ "ReadWriteOnce" ]
+
+---
+  apiVersion: v1 
+  kind: PersistentVolumeClaim
+  metadata:
+    name: node-js-pvc
+    namespace: default
+  spec:
+    accessModes: ["ReadWriteOnce"]
+    resources:
+      requests:
+        storage: "1Gi"
+---
+apiVersion: v1 
+kind: Service 
+metadata:
+  name: svc-node-js
+  namespace: default
+spec:
+  ports:
+    - port: 3000
+      targetPort: 3000
+  selector:
+    app: front-end
+  type: NodePort
+
+

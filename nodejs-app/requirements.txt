@@ -1,0 +1,18 @@
+ Install node version manager (nvm) by typing the following at the command line. Use nvm to install Node.js because nvm can install multiple versions of Node.js and allow you to switch between them.Install node version manager (nvm) by typing the following at the command line. Use nvm to install Node.js because nvm can install multiple versions of Node.js and allow you to switch between them.
+ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+
+2) Activate nvm by typing the following at the command line.
+    . ~/.nvm/nvm.sh
+3)  Use nvm to install the latest version of Node.js by typing the following at the command line.
+    nvm install 16.0.0
+4) check version
+   npm -v  node -v 
+
+------------------------------------
+#after that intialise npm by giving command
+npm init 
+#Install the express library and add it to the package.json file as a dependency.
+npm istall --save express 
+#Install a tool called nodemon that automatically restarts the node application when it detects any changes.
+npm install --save nodemon 
+

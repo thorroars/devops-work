@@ -6,8 +6,7 @@ metadata:
 spec:
   accessModes:
   - ReadWriteOnce
-  capacity:
-    requests:
-      storage: "3Gi"
+  capacity::
+      storage: "2Gi"
 
       
